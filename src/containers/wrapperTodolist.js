@@ -1,5 +1,5 @@
 import TodoList from '../components/TodoList'
-import { setVisibleFilter } from '../actions/index'
+import { setVisibleFilter } from '../redux/actions/index'
 import { connect } from 'react-redux'
 
 
@@ -16,11 +16,9 @@ const getVisibilityFilter = (todos, todo_show) => {
     }
 }
 
-const mapStateToProps = state => {
-    return {
+const mapStateToProps = state => ({
         todos: getVisibilityFilter(state.todos, state.todo_show)
-    }
-}
+})
 
 
 

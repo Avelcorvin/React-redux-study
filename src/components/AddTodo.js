@@ -1,23 +1,28 @@
 import React from 'react';
 
-const AddTodo = ({ id, children, onTodoClick }) => {
-    let input
+const AddTodo = ({ id, onTodoClick }) => {
+    let input;
+    const submitHandler = (eo)=>{
+            eo.preventDefault();
+            if (input.value){
+            return onTodoClick(input, id);
+            } return console.log("Пустое значение")
+
+    }
     return (
         <div>
-            <form
-                onSubmit={(eo) => {
-                    eo.preventDefault();
-                    onTodoClick(input, id)
-                    console.log(input.value)
-                }}
+            <form onSubmit={submitHandler}>
+                <label htmlFor="todoInput">
+                    Добавить запись </label>
 
-            >
-                {children}
                 <input
-                    ref={node => input = node} />
-                <button type="submit">
-                    AddTodo
-             </button>
+                    className="todoInput" 
+                    ref={node => input = node}/>
+
+                <button
+                className=" waves-effect waves-light orange btn-small"
+                type="submit">
+                    AddTodo</button>
             </form>
         </div>
     )

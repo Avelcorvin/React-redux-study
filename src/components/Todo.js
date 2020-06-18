@@ -4,10 +4,10 @@ import React from 'react';
 
 
 const Todo = (props) => {
-    const { key, text } = props
+    const { data, text } = props
+    console.log(props)
     return (
-        <li
-            key={key}
+        <li key={data}
             >{text}</li>
 )}
 

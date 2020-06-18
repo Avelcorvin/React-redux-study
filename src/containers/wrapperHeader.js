@@ -10,7 +10,7 @@ import React from 'react'
 
 
 const Header = ( data ) => {
-    const { header, description, pagenamber } = data
+    const { header, description } = data
     return (
         <div>
             <h1>
@@ -18,17 +18,14 @@ const Header = ( data ) => {
 
             <p> 
                 {description}</p>
-
-            <span>
-                {pagenamber}</span></div>
+        </div>
 )}
 
 
 
 const mapStateToProps = state => ({
-            header: "header",
-            description: "descript",
-            pagenamber: "#1"
+            header: "Список дел",
+            description: "Составь список дел",
 
 })
 

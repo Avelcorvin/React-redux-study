@@ -5,13 +5,12 @@ import Todo from './Todo'
 
 
 const TodoList =({todos})=>{
-    console.log("todos",todos)
     return (
         <ul>
             {todos.map(
-                (todo, key) =>  <Todo key={key}    {...todo}  />  
-            )}</ul>
-)}
+                (todo, index) =>  <Todo key={index} data={index} {...todo} />  )}
+        
+        </ul>)}
 
 
 
